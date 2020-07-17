@@ -2,6 +2,7 @@ version: '3'
 services:
  selenoid:
    network_mode: bridge
+   restart: always
    image: aerokube/selenoid
    volumes:
      - "./docker:/etc/selenoid"
@@ -17,6 +18,7 @@ services:
  selenoid-ui:
    image: "aerokube/selenoid-ui"
    network_mode: bridge
+   restart: always
    links:
      - selenoid
    ports:
